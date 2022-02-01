@@ -1,0 +1,53 @@
+<MangaProject>
+    <random_seed> 100 </random_seed>
+    <tree_dynamics>
+        <aboveground_competition>
+            <type> SimpleTest </type> 
+        </aboveground_competition>
+        <belowground_competition>
+            <type> FixedSalinity </type>
+                <salinity>0.02 0.02</salinity>
+                <max_x> 10 </max_x>
+                <min_x> 0 </min_x>        
+            </belowground_competition>
+        <tree_growth_and_death>
+            <type> SimpleBettina </type>
+        </tree_growth_and_death>
+    </tree_dynamics>
+    <initial_population>
+        <group>
+            <name> Initial </name>
+            <species> Avicennia </species>
+            <distribution>
+                <type> GroupFromFile </type>    
+                <filename> bettina_water_use/simulation_results/initial_pop.csv </filename>
+                <n_recruitment_per_step> 0 </n_recruitment_per_step>
+            </distribution>
+        </group>
+    </initial_population>
+    <tree_time_loop>
+        <type> Simple </type>
+        <t_start> 0 </t_start>
+        <t_end> 6311520000 </t_end>
+        <delta_t> 864000 </delta_t>
+    </tree_time_loop>
+    <visualization>
+        <type> NONE </type>
+    </visualization>
+    <tree_output>
+        <type> OneFile </type>
+        <output_each_nth_timestep> 4 </output_each_nth_timestep>
+        <output_dir>bettina_water_use/simulation_results/setup_SAL_0_02-0_02\TreeOutput\</output_dir>
+        <geometry_output> r_stem </geometry_output>
+        <geometry_output> h_stem </geometry_output>
+        <geometry_output> r_crown </geometry_output>
+        <geometry_output> r_root </geometry_output>
+        <growth_output> xylem_resistance </growth_output>
+        <growth_output> root_surface_resistance </growth_output>
+        <growth_output> ag_resources </growth_output>
+        <growth_output> bg_resources </growth_output>
+        <growth_output> growth </growth_output>
+        <growth_output> psi_zero </growth_output>
+        <growth_output> salinity </growth_output>
+    </tree_output>
+</MangaProject>
